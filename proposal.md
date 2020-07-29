@@ -66,5 +66,4 @@ Search a database of all known breached accounts to see if your accounts have be
 
 #### Component Hierarchy
 
-[image]
-(tree diag of how components are linked)
+![Image03](https://user-images.githubusercontent.com/29113711/88753704-e50eb780-d12a-11ea-8331-fe08d64fcb62.png)
