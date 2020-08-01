@@ -24,9 +24,8 @@ class SearchBox extends Component {
             .then(res => {
             console.log(res);
             this.props.setCompromisedAccounts(res);
-
         });
-
+		
         console.log(this.state.email);
 
 	};

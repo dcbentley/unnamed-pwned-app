@@ -4,7 +4,7 @@ class FactsBox extends Component {
     render() {
         return (
             <div>
-                <h1>Facts Box</h1>
+                <h3>Facts Box Placeholder</h3>
             </div>
         )
     }
