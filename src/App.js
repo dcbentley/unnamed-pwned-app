@@ -79,11 +79,3 @@ class App extends Component {
 }
 
 export default App;
-
-// {/* Catch all for invalid URLS */}
-// 					<Route
-// 						path='*'
-// 						render={() => {
-// 							return <Redirect to='/currencies' />;
-// 						}}
-// 					/>
