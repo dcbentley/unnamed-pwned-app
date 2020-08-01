@@ -5,7 +5,6 @@ class SearchBox extends Component {
 		super();
 		this.state = {
 			email: '',
-			domain: [],
 		};
 	}
 
@@ -24,15 +23,11 @@ class SearchBox extends Component {
             .then((res) => res.json())
             .then(res => {
             console.log(res);
-            this.props.setAccounts(res[0]);
+            this.props.setCompromisedAccounts(res);
 
         });
-        //     this.setState({domain: res })
-        // });
 
         console.log(this.state.email);
-        console.log(this.state.domain);
-        console.log(res => console.log(res));
 
 	};
 
@@ -48,7 +43,7 @@ class SearchBox extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<input
 						placeholder='email address'
-						type='text'
+						type='email'
 						value={this.state.email}
 						onChange={this.handleChange}
 					/>
