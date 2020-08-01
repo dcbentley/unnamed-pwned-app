@@ -1,12 +1,42 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class About extends Component {
-    render() {
-        return (
-            <div>
-                Placeholder stuff here
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div>
+				<main className='aboutContainer'>
+					<div className='kofi'>
+						If you think this is nifty, you can help fund projects like it. Buy
+						be a cup of coffee via{' '}
+						<a href='https://ko-fi.com/dcbentley'>Ko-Fi</a>.
+					</div>
+					<div className='causes'>
+						Here are a few other causes that I support:
+						<div>
+							<a href='https://blacklivesmatters.carrd.co/'>
+								Black Lives Matter
+							</a>
+						</div>
+						<div>
+							<a href='https://www.eff.org/'>Electronic Frontier Foundation</a>
+						</div>
+						<div class='credits'>
+							<span>Made with &hearts; by Daniel Bentley</span>
+						</div>
+						<footer>
+							<span class='links'>
+								<a href='https://www.linkedin.com/in/danielcbentley/'>
+									LinkedIn
+								</a>
+							</span>
+							<span class='links'>
+								<a href='https://github.com/dcbentley/trivia-night'> GitHub</a>
+							</span>
+						</footer>
+					</div>
+				</main>
+			</div>
+		);
+	}
 }
 export default About;
