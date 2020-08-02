@@ -54,7 +54,6 @@ class App extends Component {
 					{/* <Link to={`/domains/${items.Name}`}>{items.Name}</Link>
 					 */}
 					<div className='logos'>
-						logo
 						<img
 							src={filteredCompromisedDomains.LogoPath}
 							alt={filteredCompromisedDomains.Name}
