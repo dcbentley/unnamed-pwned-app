@@ -35,11 +35,11 @@ class App extends Component {
 
 	setCompromisedAccounts = (domains) => {
 		this.setState({ domains: domains });
-  };
-  
-  createMarkup = (html) => {
-  return {__html: html};
-}
+	};
+
+	createMarkup = (html) => {
+		return { __html: html };
+	};
 
 	render() {
 		this.state.domains.forEach((items) => console.log(items));
@@ -50,32 +50,29 @@ class App extends Component {
 			);
 			console.log(filteredCompromisedDomains);
 			return (
-				<div className='searchContainer' key={items.Name}>
-					{/* <Link to={`/domains/${items.Name}`}>{items.Name}</Link>
-					 */}
-					<div className='logos'>
+				<div class='row' key={items.Name}>
+					<div class='col-6 col-md-4 searchImg'>
 						<img
 							src={filteredCompromisedDomains.LogoPath}
 							alt={filteredCompromisedDomains.Name}
 						/>
 					</div>
-					<div>
-						<h4>Name:</h4>
-						{filteredCompromisedDomains.Name}
-					</div>
-					<div>
-						<h4>Date:</h4>
-						{filteredCompromisedDomains.BreachDate}
-					</div>
-					<div>
-						<h4>Description:</h4>
-						<p dangerouslySetInnerHTML={this.createMarkup(filteredCompromisedDomains.Description)} />
 
-						
-					</div>
-					<div>
-						<h4>Compromised Data:</h4>
-						{filteredCompromisedDomains.DataClasses.join(', ')}
+					<div class='col-12 col-md-8'>
+						<div className='container-text'>
+							<h4>Name:</h4>
+							{filteredCompromisedDomains.Name}
+							<h4>Date:</h4>
+							{filteredCompromisedDomains.BreachDate}
+							<h4>Description:</h4>
+							<p
+								dangerouslySetInnerHTML={this.createMarkup(
+									filteredCompromisedDomains.Description
+								)}
+							/>
+							<h4>Compromised Data:</h4>
+							{filteredCompromisedDomains.DataClasses.join(', ')}
+						</div>
 					</div>
 				</div>
 			);
@@ -89,11 +86,13 @@ class App extends Component {
 					<SearchBox setCompromisedAccounts={this.setCompromisedAccounts} />
 					<div>Search Results: {compromisedDomains}</div>
 				</Route>
-        <Route path='/about' component={About}/>
-        <Route path='*' render={() => {
-          return <Redirect to='/' />  
-        }}
-        />
+				<Route path='/about' component={About} />
+				<Route
+					path='*'
+					render={() => {
+						return <Redirect to='/' />;
+					}}
+				/>
 			</div>
 		);
 	}

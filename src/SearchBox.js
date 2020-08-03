@@ -25,7 +25,7 @@ class SearchBox extends Component {
             console.log(res);
             this.props.setCompromisedAccounts(res);
         });
-		
+
         console.log(this.state.email);
 
 	};
@@ -38,16 +38,22 @@ class SearchBox extends Component {
 	render() {
 		console.log(this.state.email);
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<input
-						placeholder='email address'
-						type='email'
-						value={this.state.email}
-						onChange={this.handleChange}
-					/>
-					<input type='submit' value='Search' />
-				</form>
+			<div class='container'>
+				<div class='row'>
+					<div class='col'></div>
+					<div class='col-5'>
+						<form onSubmit={this.handleSubmit}>
+							<input
+								placeholder='email address'
+								type='email'
+								value={this.state.email}
+								onChange={this.handleChange}
+							/>
+							<input type='submit' value='Search' />
+						</form>
+					</div>
+					<div class='col'></div>
+				</div>
 			</div>
 		);
 	}

@@ -1,16 +1,17 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-.container {
+.container-text {
     display: flex;
-    flex-direction: row;
-}
-.container h4 {
-    font-weight: bold;
+    flex-direction: column;
 }
 
-.logos img {
-    display: inline-block;
-    width: 100px;
+.searchImg > img {
+    width: 50%;
+    margin-left: 1em;
+}
+
+.nav-item {
+    margin-left: .5em;
 }
