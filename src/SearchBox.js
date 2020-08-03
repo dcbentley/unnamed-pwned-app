@@ -5,6 +5,7 @@ class SearchBox extends Component {
 		super();
 		this.state = {
 			email: '',
+			noResults: false,
 		};
 	}
 
@@ -20,17 +21,25 @@ class SearchBox extends Component {
 			method: 'GET',
 			headers: headers,
 		})
-            .then((res) => res.json())
+		
+		// .then((res) => {console.log(res.status);res.json()})
+			.then(res => {
+				if (res.status === 404) {
+					this.props.setNoResults()
+				} else {
+					return (res.json())
+				}
+			})
             .then(res => {
-            console.log(res);
+            // console.log(res);
 			this.props.setCompromisedAccounts(res);
         })
 		.catch(err => {
 			console.error(err)
 		});
 		
-		
-        console.log(this.state.email);
+		// this.props.setNoResults();
+        // console.log(this.state.email);
 
 	};
 
