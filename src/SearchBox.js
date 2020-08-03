@@ -23,9 +23,13 @@ class SearchBox extends Component {
             .then((res) => res.json())
             .then(res => {
             console.log(res);
-            this.props.setCompromisedAccounts(res);
-        });
-
+			this.props.setCompromisedAccounts(res);
+        })
+		.catch(err => {
+			console.error(err)
+		});
+		
+		
         console.log(this.state.email);
 
 	};
@@ -38,10 +42,10 @@ class SearchBox extends Component {
 	render() {
 		console.log(this.state.email);
 		return (
-			<div class='container'>
-				<div class='row'>
-					<div class='col'></div>
-					<div class='col-5'>
+			<div className='container'>
+				<div className='row'>
+					<div className='col'></div>
+					<div className='col-5'>
 						<form onSubmit={this.handleSubmit}>
 							<input
 								placeholder='email address'
@@ -52,7 +56,7 @@ class SearchBox extends Component {
 							<input type='submit' value='Search' />
 						</form>
 					</div>
-					<div class='col'></div>
+					<div className='col'></div>
 				</div>
 			</div>
 		);
