@@ -84,9 +84,12 @@ class App extends Component {
 				<Route path='/' exact>
 					<FactsBox />
 					<SearchBox setCompromisedAccounts={this.setCompromisedAccounts} />
-					<div>Search Results: {compromisedDomains}</div>
+					<div>{compromisedDomains}</div>
 				</Route>
 				<Route path='/about' component={About} />
+
+				<Route path='/:email'/>
+
 				<Route
 					path='*'
 					render={() => {
