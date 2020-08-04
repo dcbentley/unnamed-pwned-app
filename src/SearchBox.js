@@ -47,7 +47,7 @@ class SearchBox extends Component {
 // Render search bar and call handleSubmit to process via handleChange what the user enters into the input field.
 	render() {
 		return (
-			<div className='container'>
+			<div>
 				<div className='row'>
 					{/* lets add a column for padding */}
 					<div className='col'></div>
