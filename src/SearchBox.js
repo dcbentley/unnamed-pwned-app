@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+// The SearchBox Component creates the initial API call and handles the form submission
 class SearchBox extends Component {
 	constructor() {
 		super();
@@ -8,7 +8,7 @@ class SearchBox extends Component {
 			noResults: false,
 		};
 	}
-
+	// 
 	handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -21,8 +21,6 @@ class SearchBox extends Component {
 			method: 'GET',
 			headers: headers,
 		})
-		
-		// .then((res) => {console.log(res.status);res.json()})
 			.then(res => {
 				if (res.status === 404) {
 					this.props.setNoResults()
@@ -31,16 +29,11 @@ class SearchBox extends Component {
 				}
 			})
             .then(res => {
-            // console.log(res);
 			this.props.setCompromisedAccounts(res);
         })
 		.catch(err => {
 			console.error(err)
 		});
-		
-		// this.props.setNoResults();
-        // console.log(this.state.email);
-
 	};
 
 	handleChange = (e) => {

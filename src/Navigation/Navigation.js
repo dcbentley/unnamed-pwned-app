@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Navigation extends Component {
 	render() {
 		return (
-			<nav className='navbar navbar-expand-lg navbar-light bg-light'>
+			<nav className='navbar navbar-expand-lg navbar-light'>
 				<a className='navbar-brand' href='/'>
 					Pwned-App
 				</a>

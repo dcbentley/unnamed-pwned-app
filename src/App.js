@@ -106,7 +106,7 @@ let compromisedDomains;
 						setCompromisedAccounts={this.setCompromisedAccounts}
 						setNoResults={this.setNoResults}
 					/>
-					<div>{compromisedDomains}</div>
+					<div className='searchResults'>{compromisedDomains}</div>
 					{this.state.domains === undefined && (
 						<p>Congrats! No Compromised accounts!</p>
 					)}
