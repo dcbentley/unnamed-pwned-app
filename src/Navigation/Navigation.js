@@ -24,14 +24,14 @@ class Navigation extends Component {
 					<ul className='navbar-nav'>
 						<li className='nav-item active'>
 							{/* link to the home page */}
-							<Link classLink='nav-link' to='/'>
+							<Link to='/'>
 								Home
                                 <span className='sr-only'>(current)</span>{' '}
 							</Link>
 						</li>
 						<li className='nav-item'>
 							{/* link to the about page */}
-							<Link classList='nav-link' to='/about'>
+							<Link to='/about'>
 								{' '}
 								About{' '}
 							</Link>

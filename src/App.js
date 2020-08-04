@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import './App.css';
 
 import Navigation from './Navigation/Navigation';
@@ -46,7 +46,7 @@ class App extends Component {
 	createMarkup = (html) => {
 		return { __html: html };
 	};
-// Here we check to see if domains has any length, if it does, then noResults is true and we want to proceed to the MagicSauce area. If there is no length, then the email was not found in the database and we want to exit out and jump down to the return holding all the components and tell the user we couldn't find any breaches
+	// Here we check to see if domains has any length, if it does, then noResults is true and we want to proceed to the MagicSauce area. If there is no length, then the email was not found in the database and we want to exit out and jump down to the return holding all the components and tell the user we couldn't find any breaches
 	setNoResults = () => {
 		if (this.state.domains.length === 0) {
 			this.setState({ noResults: true });
@@ -65,23 +65,25 @@ class App extends Component {
 				const filteredCompromisedDomains = this.state.breaches.find(
 					(breach) => breach.Name === items.Name
 				);
-// Here we are going to start returning our filteredCompromisedDomains
+				// Here we are going to start returning our filteredCompromisedDomains
 				return (
+					//
 					<div className='row' key={items.Name}>
+						{/* bootstrap grid columns for logo */}
 						<div className='col-6 col-md-4 searchImg'>
 							<img
 								src={filteredCompromisedDomains.LogoPath}
 								alt={filteredCompromisedDomains.Name}
 							/>
 						</div>
-
+						{/* bootstrap grid columns for string data */}
 						<div className='col-12 col-md-8'>
 							<div className='container-text'>
 								<h4>Name:</h4>
 								{filteredCompromisedDomains.Name}
 								<h4>Date:</h4>
 								{filteredCompromisedDomains.BreachDate}
-{/* because there was HTML in the string for the description, we must use dangerouslySetInnerHTML. This is a cheap way we can process this. A safer way that can mitigate XSS would be to have a separate links field in the database, or spend a lot of time and effort processing out the HTML in another 2 functions */}
+								{/* because there was HTML in the string for the description, we must use dangerouslySetInnerHTML. This is a cheap way we can process this. A safer way that can mitigate XSS would be to have a separate links field in the database, or spend a lot of time and effort processing out the HTML in another 2 functions */}
 								<h4>Description:</h4>
 								<p
 									dangerouslySetInnerHTML={this.createMarkup(
@@ -102,23 +104,28 @@ class App extends Component {
 		}
 
 		return (
+			// components
 			<div>
+				{/* n=av component */}
 				<Navigation />
+				{/* nav route path */}
 				<Route path='/' exact>
+					{/* FactsBox component */}
 					<FactsBox />
+					{/* SearchBox component with attributes to pass */}
 					<SearchBox
 						setCompromisedAccounts={this.setCompromisedAccounts}
 						setNoResults={this.setNoResults}
 					/>
+					{/* compromisedDomains and logic for when domains are undefined */}
 					<div className='searchResults'>{compromisedDomains}</div>
 					{this.state.domains === undefined && (
-						<p>Congrats! No Compromised accounts!</p>
+						<p className='congrats'>Congrats! No Compromised accounts found!</p>
 					)}
 				</Route>
+				{/* about page route */}
 				<Route path='/about' component={About} />
-
-				<Route path='/:email' />
-
+				{/* catch for all paths that aren't correct */}
 				<Route
 					path='*'
 					render={() => {
