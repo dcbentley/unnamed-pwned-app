@@ -23,13 +23,16 @@ To use the current stand build, simply put your email address into the search fi
 - HTML
 - CSS
 - React.js
+- React Router
 - bootstrap
 - HaveIBeenPwned API
 
 #### Getting Started / Installation Instructions
 
 - To run this app, you will need to clone or fork this repo and then push a deployment to a service like Heroku or GCP/GAE.
-- You will need to purchase an API key from https://haveibeenpwned.com/API/Key
+- run npm install
+- You will need to purchase an API key from https://haveibeenpwned.com/API/Key and save to .env.local file
+- You will need to add "https://cors-anywhere.herokuapp.com/" to your API calls for them to work unless you setup a proxy server to handle CORS
 
 #### Contribution Guidelines
 
@@ -41,10 +44,11 @@ This was more than a bit of a challenge. This was the first time that I've worke
 
 #### Unsolved issues and known bugs
 
-- Stricter validation of exact email results need to be implemented. On occasion approximate results will be returned.
+- Some styling could be improved to help readability 
 
 #### Additional enhancements
 
 - Additional styling and images on the About page
 - Better styling on landing page
 - Landing page needs an carousel with rotating facts
+- Have URL that user could copy or bookmark so they could easily return to a previous search
