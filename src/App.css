@@ -19,7 +19,7 @@
     padding-bottom: 1em;
 }
 
-.factBox {
+.factBox,.aboutContainer {
     margin: 0 auto;
     width: 75%;
     padding-top: 1em;

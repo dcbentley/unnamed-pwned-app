@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+// Navigation portion of the site
 class Navigation extends Component {
 	render() {
 		return (
 			<nav className='navbar navbar-expand-lg navbar-light'>
+				{/* link to the home page */}
 				<a className='navbar-brand' href='/'>
 					Pwned-App
 				</a>
+				{/* lets add some bootstrap to help make pretty and mobile responsive */}
 				<button
 					className='navbar-toggler'
 					type='button'
@@ -21,12 +23,14 @@ class Navigation extends Component {
 				<div className='collapse navbar-collapse' id='navbarNav'>
 					<ul className='navbar-nav'>
 						<li className='nav-item active'>
+							{/* link to the home page */}
 							<Link classLink='nav-link' to='/'>
 								Home
                                 <span className='sr-only'>(current)</span>{' '}
 							</Link>
 						</li>
 						<li className='nav-item'>
+							{/* link to the about page */}
 							<Link classList='nav-link' to='/about'>
 								{' '}
 								About{' '}

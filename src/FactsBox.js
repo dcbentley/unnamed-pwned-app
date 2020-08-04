@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+// This is the factBox that contains one static fact and directions
+// Maybe in the future this could contain a carousel with rotating info
 class FactsBox extends Component {
     render() {
         return (
