@@ -29,7 +29,10 @@ class About extends Component {
 							<a href='https://www.linkedin.com/in/danielcbentley/'>LinkedIn</a>
 						</span>
 						<span className='text-muted'>
-							<a href='https://github.com/dcbentley/trivia-night'> GitHub</a>
+							<a href='https://github.com/dcbentley/unnamed-pwned-app'>
+								{' '}
+								GitHub
+							</a>
 						</span>
 						<div className='text-muted'>
 							<span className='madeWithLove'>
